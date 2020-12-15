@@ -1,16 +1,25 @@
 <template>
   <main>
     <Button>This is working</Button>
-    <Menu />
+    <Menu>
+      <MenuButton>Here we go</MenuButton>
+      <MenuItems>
+        <MenuItem>Testing</MenuItem>
+        <MenuItem>Another One</MenuItem>
+      </MenuItems>
+    </Menu>
   </main>
 </template>
 
 <script lang="ts">
 import Button from "@/components/button/Button.vue";
 import Menu from "@/components/menu/Menu.vue";
+import MenuButton from "@/components/menu/MenuButton.vue";
+import MenuItems from "@/components/menu/MenuItems.vue";
+import MenuItem from "@/components/menu/MenuItem.vue";
 export default {
   name: "App",
-  components: { Button, Menu }
+  components: { Button, Menu, MenuItems, MenuItem, MenuButton }
 };
 </script>
 

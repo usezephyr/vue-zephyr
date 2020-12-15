@@ -1,20 +1,18 @@
 <template>
-  <HMenu>
+  <HMenuButton>
     <slot></slot>
-  </HMenu>
+  </HMenuButton>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Menu as HMenu } from "@headlessui/vue";
-
+import { MenuButton as HMenuButton } from "@headlessui/vue";
 export default defineComponent({
-  name: "Menu",
+  name: "MenuButton",
   setup() {
     return {};
   },
   components: {
-    HMenu
+    HMenuButton
   }
 });
 </script>
