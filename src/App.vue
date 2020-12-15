@@ -1,14 +1,16 @@
 <template>
   <main>
-    <Button classRemove="">This is working</Button>
+    <Button>This is working</Button>
+    <Menu />
   </main>
 </template>
 
 <script lang="ts">
 import Button from "@/components/button/Button.vue";
+import Menu from "@/components/menu/Menu.vue";
 export default {
   name: "App",
-  components: { Button }
+  components: { Button, Menu }
 };
 </script>
 

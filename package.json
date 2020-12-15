@@ -24,6 +24,7 @@
     "build:js_css": "rimraf dist && cross-env NODE_ENV=production SEP_CSS=true rollup --config rollup.config.js"
   },
   "dependencies": {
+    "@headlessui/vue": "^0.2.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },

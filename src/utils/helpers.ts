@@ -1,5 +1,3 @@
-import Theme from "@/theme.ts";
-
 export const remove = (list: string, remove: string): string => {
   if (!remove) return list;
   return list
@@ -9,5 +7,3 @@ export const remove = (list: string, remove: string): string => {
     })
     .join(" ");
 };
-
-console.log(Theme);
