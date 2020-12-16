@@ -1,6 +1,5 @@
 <template>
   <button :class="classes.button">
-    <div :class="classes.icon">⭐️</div>
     <span>
       <slot />
     </span>
@@ -15,11 +14,7 @@ import Theme from "./theme";
 export default defineComponent({
   name: "Button",
   props: {
-    ...themeProps({
-      classRemove: {
-        type: [String, Object]
-      }
-    })
+    ...themeProps()
   },
   setup(props) {
     const classes = reactive({

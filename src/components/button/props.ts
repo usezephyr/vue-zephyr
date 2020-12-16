@@ -20,7 +20,7 @@ interface ButtonOptionsInterface {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const themeProps = (options: ButtonOptionsInterface): any => {
+const themeProps = (options?: ButtonOptionsInterface): any => {
   return {
     classRemove: {
       type: options?.classRemove?.type ?? [String, Object],

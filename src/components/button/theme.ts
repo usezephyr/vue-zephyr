@@ -7,11 +7,11 @@ interface Element {
 }
 
 const buttonDefault =
-  "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ";
+  "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white leading-6 focus:ring-opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2";
 
 const Theme: Element = {
   primary: {
-    wrapper: `${buttonDefault} bg-green-600 hover:bg-green-700 focus:ring-green-500`,
+    wrapper: `${buttonDefault} dark:ring-offset-green-900 ring-offset-white bg-green-600 hover:bg-green-700 focus:ring-green-500`,
     icon: "inline-block mr-3",
     text: "text"
   },
