@@ -1,63 +1,73 @@
-# vue 3 Component Library BoilerPlate
+# Vue Zephyrs
 
+## About
 
-**Technology Used:**\
-[Vuejs 3.0](https://github.com/vuejs/vue-next)\
-[Typescript](https://github.com/microsoft/TypeScript)\
-[Rollup](https://github.com/rollup/rollup)
+Zephyrs is a UI library build with Tailwind and for Vue 3.
 
-## Project setup
-Please follow below mentioned step to run this project:
+## Getting Started
 
-- Clone the repo
-```shell
-https://github.com/shubhadip/vue3-component-library
+### Install package
+
+```bash
+npm i @zephyrs/vue
 ```
-
-### Run
-```
-yarn install
+```bash
+yarn add @
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+### Use in Vue
+
+**Option One: Use as Vue plugin**
+```js
+// main.js
+import Zeph from 'vue-zeph';
+
+createApp.use(Zeph).mount('#app)
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+**Option Two: Import components individually**
+```js
+// App.vue
+<template>
+  <ZButton>Click Me</ZButton>
+</template>
+
+<script>
+import { ZButton } from "vue-zeph/dist/esm/ZButton";
+export default {
+  components: { ZButton }
+}
+</script>
 ```
 
-### Build Library
-```
-yarn build:js
-```
+### Using Styles
 
-### Build Library With Separate Css file
-```
-yarn build:js_css
-```
+- Zephyrs includes pre-compiled styles if you would like to make no additional changes to the theme. To include them you maybe import those styles directly: `import 'zeph/dist/z.default.css';`.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Props
+- Components are using @headlessui/vue package
+- Every component has at least these props:
+  - classRemove
+  - classAppend
+  - [more here]
+- Read documentation for more information on each component
 
+## Themeing
 
-## Usage Of Components Built
-**As Component**
-```
-  import { TestWorld } from 'vue3-component-library/dist/esm/testworld';
-  ...
-  components:{
-    TestWorld
+Add `z.theme.js` or `z.theme.ts` to your project root:
+```js
+const Theme = {
+  ZButton: {
+    wrapper: '...',
+    icon: '...',
+    text: '...'
   }
+}
 ```
 
-**As Plugin**
-```
-  import { TestWorld } from 'vue3-component-library';
-    ...
-  app.use(TestWorld)
-```
+## Other tips
+- Working with Tailwind
+- Other built in themes
+
+## Known Issues
+- Webpack vX.X.X does not support optional chaining
