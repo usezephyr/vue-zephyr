@@ -1,15 +1,15 @@
 import { App as Application } from "vue";
-import HelloWorld from "./HelloWorld.vue";
+import ZDropdown from "./ZDropdown.vue";
 
-import { registerComponent } from "./../../utils/plugins/index";
+import { registerComponent } from "../../utils/plugins/index";
 
 const Plugin = {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   install(vue: Application) {
-    registerComponent(vue, HelloWorld);
+    registerComponent(vue, ZDropdown);
   }
 };
 
 export default Plugin;
 
-export { HelloWorld };
+export { ZDropdown };

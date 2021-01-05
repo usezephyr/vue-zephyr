@@ -1,20 +1,21 @@
 <template>
-  <HMenuButton :as="as" v-slot="{ open }">
+  <HMenuButton as="div" v-slot="{ open }">
     <slot :open="open"></slot>
   </HMenuButton>
 </template>
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import { MenuButton as HMenuButton } from "@headlessui/vue";
-import themeProps from "./menu.props";
+import { variant } from "@/props";
 
 export default defineComponent({
-  name: "MenuButton",
+  name: "ZDropdownButton",
   components: {
     HMenuButton
   },
   props: {
-    ...themeProps.MenuButton()
+    ...variant()
   }
 });
 </script>
