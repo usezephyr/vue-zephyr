@@ -6,64 +6,50 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import babel from "@rollup/plugin-babel";
-import PostCSS from "rollup-plugin-postcss";
-import simplevars from "postcss-simple-vars";
-import postcssImport from "postcss-import";
-import minimist from "minimist";
-import postcssUrl from "postcss-url";
+import postcss from "rollup-plugin-postcss";
 import url from "@rollup/plugin-url";
-import nested from "postcss-nested";
-import { terser } from "rollup-plugin-terser";
-import autoprefixer from "autoprefixer";
 import typescript from 'rollup-plugin-typescript2';
-import css from 'rollup-plugin-css-only';
+import { terser } from "rollup-plugin-terser";
 
-const postcssConfigList = [
-  postcssImport({
-    resolve(id, basedir) {
-      // resolve alias @css, @import '@css/style.css'
-      // because @css/ has 5 chars
-      if (id.startsWith("@css")) {
-        return path.resolve("./src/assets/styles/css", id.slice(5));
-      }
+const { plugins: postCssPlugins } = require('./postcss.config');
 
-      // resolve node_modules, @import '~normalize.css/normalize.css'
-      // similar to how css-loader's handling of node_modules
-      if (id.startsWith("~")) {
-        return path.resolve("./node_modules", id.slice(1));
-      }
-
-      // resolve relative path, @import './components/style.css'
-      return path.resolve(basedir, id);
-    }
-  }),
-  simplevars,
-  nested,
-  postcssUrl({ url: "inline" }),
-  autoprefixer({
-    overrideBrowserslist: "> 1%, IE 6, Explorer >= 10, Safari >= 7"
-  })
-];
-
-const argv = minimist(process.argv.slice(2));
-
-const projectRoot = path.resolve(__dirname, ".");
-
-let postVueConfig = [
-  // Process only `<style module>` blocks.
-  PostCSS({
-    modules: {
-      generateScopedName: '[local]___[hash:base64:5]',
-    },
-    include: /&module=.*\.css$/,
-  }),
-  // Process all `<style>` blocks except `<style module>`.
-  PostCSS({ include: /(?<!&module=.*)\.css$/,
-    plugins:[
-      ...postcssConfigList
-    ]
-   }),
-  url({
+const config = {
+  preVue: [
+    alias({
+      entries: [
+        {
+          find: "@",
+          replacement: `${path.resolve(path.resolve(__dirname, "."), "src")}`
+        }
+      ],
+      customResolver: resolve({
+        extensions: [".js", ".jsx", ".vue"]
+      })
+    })
+  ],
+  replace: {
+    "process.env.NODE_ENV": JSON.stringify("production"),
+    __VUE_OPTIONS_API__: JSON.stringify(true),
+    __VUE_PROD_DEVTOOLS__: JSON.stringify(false)
+  },
+  vue: {
+    postcssPlugins: postCssPlugins,
+    compileTemplate: true,
+  },
+  postVue: [
+    // Process only `<style module>` blocks.
+    postcss({
+      modules: {
+        generateScopedName: '[local]___[hash:base64:5]',
+      },
+      include: /&module=.*\.css$/,
+    }),
+    // Process all `<style>` blocks except `<style module>`.
+    postcss({
+      include: /(?<!&module=.*)\.css$/,
+      plugins: postCssPlugins
+    }),
+    url({
       include: [
         '**/*.svg',
         '**/*.png',
@@ -72,45 +58,11 @@ let postVueConfig = [
         '**/*.jpeg'
       ]
     }),
-]
-
-if(process.env.SEP_CSS){
-  postVueConfig = [css({ output: './dist/bundle.css' }), ...postVueConfig]
-}
-
-const baseConfig = {
-  plugins: {
-    preVue: [
-      alias({
-        entries: [
-          {
-            find: "@",
-            replacement: `${path.resolve(projectRoot, "src")}`
-          }
-        ],
-        customResolver: resolve({
-          extensions: [".js", ".jsx", ".vue"]
-        })
-      })
-    ],
-    replace: {
-      "process.env.NODE_ENV": JSON.stringify("production"),
-      __VUE_OPTIONS_API__: JSON.stringify(true),
-      __VUE_PROD_DEVTOOLS__: JSON.stringify(false)
-    },
-    vue: {
-      target: "browser",
-      preprocessStyles: process.env.SEP_CSS ? false : true,
-      postcssPlugins: [...postcssConfigList]
-    },
-    postVue: [
-      ...postVueConfig
-    ],
-    babel: {
-      exclude: "node_modules/**",
-      extensions: [".js", ".jsx", ".vue"],
-      babelHelpers: "bundled"
-    }
+  ],
+  babel: {
+    exclude: "node_modules/**",
+    extensions: [".js", ".jsx", ".vue"],
+    babelHelpers: "runtime"
   }
 };
 
@@ -133,7 +85,7 @@ const globals = {
 const baseFolder = "./src/";
 const componentsFolder = "components/";
 
-const components = fs
+const getComponents = fs
   .readdirSync(baseFolder + componentsFolder)
   .filter(f =>
     fs.statSync(path.join(baseFolder + componentsFolder, f)).isDirectory()
@@ -141,7 +93,7 @@ const components = fs
 
 const entriespath = {
   index: "./src/index.ts",
-  ...components.reduce((obj, name) => {
+  ...getComponents.reduce((obj, name) => {
     obj[name] = baseFolder + componentsFolder + name + "/index.ts";
     return obj;
   }, {})
@@ -151,9 +103,6 @@ const capitalize = s => {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
-
-// Customize configs for individual targets
-let buildFormats = [];
 
 const mapComponent = name => {
   return [
@@ -169,21 +118,25 @@ const mapComponent = name => {
       },
       plugins: [
         typescript(),
-        ...baseConfig.plugins.preVue,
+        ...config.preVue,
         vue({}),
-        ...baseConfig.plugins.postVue,
+        ...config.postVue,
+        commonjs(),
         babel({
-          ...baseConfig.plugins.babel,
+          ...config.babel,
           presets: [["@babel/preset-env", { modules: false }]]
         }),
-        commonjs()
       ]
     }
   ];
 };
 
-if (!argv.format || argv.format === "es") {
-  const esConfig = {
+const components = [
+  ...getComponents.map(f => mapComponent(f)).reduce((r, a) => r.concat(a), [])
+];
+
+export default [
+  {
     input: entriespath,
     external,
     output: {
@@ -192,19 +145,18 @@ if (!argv.format || argv.format === "es") {
     },
     plugins: [
       typescript(),
+      replace(config.replace),
+      ...config.preVue,
+      vue(config.vue),
+      ...config.postVue,
       commonjs(),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
       babel({
-        ...baseConfig.plugins.babel,
+        ...config.babel,
         presets: [["@babel/preset-env", { modules: false }]]
-      })
+      }),
     ]
-  };
-
-  const merged = {
+  },
+  {
     input: "src/index.ts",
     external,
     output: {
@@ -213,28 +165,18 @@ if (!argv.format || argv.format === "es") {
     },
     plugins: [
       typescript(),
+      replace(config.replace),
+      ...config.preVue,
+      vue(config.vue),
+      ...config.postVue,
       commonjs(),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
       babel({
-        ...baseConfig.plugins.babel,
+        ...config.babel,
         presets: [["@babel/preset-env", { modules: false }]]
-      })
+      }),
     ]
-  };
-  const ind = [
-    ...components.map(f => mapComponent(f)).reduce((r, a) => r.concat(a), [])
-  ];
-  buildFormats.push(esConfig);
-  buildFormats.push(merged);
-  buildFormats = [...buildFormats, ...ind];
-}
-
-if (!argv.format || argv.format === "iife") {
-  const unpkgConfig = {
-    ...baseConfig,
+  },
+  {
     input: "./src/index.ts",
     external,
     output: {
@@ -245,27 +187,25 @@ if (!argv.format || argv.format === "iife") {
       exports: "named",
       globals
     },
+    plugins: {
+      ...config,
+    },
     plugins: [
       typescript(),
+      replace(config.replace),
+      ...config.preVue,
+      vue(config.vue),
+      ...config.postVue,
       commonjs(),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel),
+      babel(config.babel),
       terser({
         output: {
           ecma: 5
         }
-      })
+      }),
     ]
-  };
-  buildFormats.push(unpkgConfig);
-}
-
-if (!argv.format || argv.format === "cjs") {
-  const cjsConfig = {
-    ...baseConfig,
+  },
+  {
     input: entriespath,
     external,
     output: {
@@ -275,23 +215,25 @@ if (!argv.format || argv.format === "cjs") {
       exports: "named",
       globals
     },
+    plugins: {
+      ...config,
+    },
     plugins: [
       typescript(),
-      commonjs(),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
+      replace(config.replace),
+      ...config.preVue,
       vue({
-        ...baseConfig.plugins.vue,
+        ...config.vue,
         template: {
-          ...baseConfig.plugins.vue.template,
+          ...config.vue.template,
           optimizeSSR: true
         }
       }),
-      ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel)
+      ...config.postVue,
+      commonjs(),
+      babel(config.babel),
     ]
-  };
-  buildFormats.push(cjsConfig);
-}
-// Export config
-export default buildFormats;
+  },
+  // Components get their own outputs
+  ...components,
+];
