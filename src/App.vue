@@ -2,56 +2,79 @@
   <main class="space-y-8">
     <div class="space-y-4">
       <div>Toggle</div>
-      <Button @click="toggleScheme">
-        {{ isDark ? "☀️" : "🌙" }}
-      </Button>
     </div>
     <div class="space-y-4">
-      <div>Menu</div>
-      <Menu v-slot="{ open }">
-        <MenuButton>
-          <Button :class="{ italic: open }">
+      <ZButton
+        @click="toggleScheme"
+        classRemove="rounded-md"
+        classAppend="rounded-l-md"
+      >
+        Turn: {{ isDark ? "☀️" : "🌙" }}
+      </ZButton>
+      <ZDropdown v-slot="{ open }">
+        <ZDropdownButton>
+          <ZButton
+            variant="danger"
+            classRemove="rounded-md"
+            :classAppend="`rounded-r-md`"
+          >
             {{ open ? "Close" : "Open" }}
-          </Button>
-        </MenuButton>
-        <MenuItems>
-          <MenuItem v-slot="{ active }">
+          </ZButton>
+        </ZDropdownButton>
+        <ZDropdownItems>
+          <ZDropdownItem v-slot="{ active }">
             Testing{{ active ? ": Active" : "" }}
-          </MenuItem>
-          <MenuItem>Another One</MenuItem>
-        </MenuItems>
-      </Menu>
+          </ZDropdownItem>
+          <ZDropdownItem>Another One</ZDropdownItem>
+        </ZDropdownItems>
+      </ZDropdown>
     </div>
   </main>
 </template>
 
 <script lang="ts">
-import Button from "@/components/button/Button.vue";
-import Menu from "@/components/menu/Menu.vue";
-import MenuButton from "@/components/menu/MenuButton.vue";
-import MenuItems from "@/components/menu/MenuItems.vue";
-import MenuItem from "@/components/menu/MenuItem.vue";
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, inject } from "vue";
+import { tw } from "twind";
+import ZButton from "@/components/ZButton/ZButton.vue";
+import ZDropdown, {
+  ZDropdownButton,
+  ZDropdownItems,
+  ZDropdownItem
+} from "@/components/ZDropdown/ZDropdown.vue";
 import { darkMode } from "./utils/darkMode";
 export default defineComponent({
   name: "App",
-  components: { Button, Menu, MenuItems, MenuItem, MenuButton },
+  components: {
+    ZButton,
+    ZDropdown,
+    ZDropdownButton,
+    ZDropdownItems,
+    ZDropdownItem
+  },
   setup() {
     const { isDark, toggleScheme } = darkMode();
-    return { isDark, toggleScheme };
+    const twindEnable = inject("twindEnable", true);
+    onMounted(() => {
+      twindEnable
+        ? document.body.classList.add(
+            tw`dark:bg-gray-900`,
+            tw`bg-gray-100`,
+            tw`dark:text-white`,
+            tw`text-gray-900`
+          )
+        : null;
+    });
+    return { isDark, toggleScheme, twindEnable };
   }
 });
 </script>
 
 <style lang="postcss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
-}
-body {
-  @apply dark:bg-gray-900 bg-gray-100 dark:text-white text-gray-900;
 }
 </style>
