@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { setup, cssomSheet, silent } from 'twind';
-// @ts-expect-error: Import test theme
+
 import theme from './testTheme.js';
 
 // Create App
