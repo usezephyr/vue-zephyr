@@ -1,7 +1,3 @@
-// Structure: Base -> Variant -> Element
-// Magic keys: _base, _default
-// Magic values: $root
-
 export default {
   ZButton: {
     _base:

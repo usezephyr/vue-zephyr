@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { setup, cssomSheet, silent } from 'twind';
 
-import theme from './testTheme.js';
+import theme from './testTheme';
 
 // Create App
 const app = createApp(App);
