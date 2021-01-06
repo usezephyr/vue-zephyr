@@ -1,11 +1,29 @@
+// Vue
 import { createApp } from "vue";
 import App from "./App.vue";
-import { setup, cssomSheet, silent } from 'twind';
+// Twind
+import { setup, silent } from 'twind';
+import typography from '@twind/typography'
+// Components
+import Button from "@/components/Button/Button.vue";
+// @ts-expect-error
+import Dropdown, { DropdownButton, DropdownItems, DropdownItem } from "@/components/Dropdown/Dropdown.vue";
 
 import theme from './testTheme';
+import router from './router'
 
 // Create App
 const app = createApp(App);
+
+// Global Components
+app.component('Button', Button);
+app.component('Dropdown', Dropdown);
+app.component('DropdownButton', DropdownButton);
+app.component('DropdownItems', DropdownItems);
+app.component('DropdownItem', DropdownItem);
+
+// Router
+app.use(router);
 
 // User Theme
 app.provide('userTheme', theme ?? {});
@@ -19,7 +37,9 @@ if (twindEnable) {
     // hash: true,
     // theme: {},
     darkMode: 'class',
-    // sheet: cssomSheet({ target: new CSSStyleSheet() }),
+    plugins: {
+    ...typography(),
+    },
   })
 }
 app.provide('twindEnable', twindEnable);

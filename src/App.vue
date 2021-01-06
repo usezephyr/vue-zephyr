@@ -1,59 +1,19 @@
 <template>
   <main class="space-y-8">
-    <div class="space-y-4">
-      <div>Toggle</div>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
     </div>
-    <div class="space-y-4">
-      <Button
-        @click="toggleScheme"
-        classRemove="rounded-md"
-        classAppend="rounded-l-md"
-      >
-        Turn: {{ isDark ? "☀️" : "🌙" }}
-      </Button>
-      <Dropdown v-slot="{ open }">
-        <DropdownButton>
-          <Button
-            variant="danger"
-            classRemove="rounded-md"
-            :classAppend="`rounded-r-md`"
-          >
-            {{ open ? "Close" : "Open" }}
-          </Button>
-        </DropdownButton>
-        <DropdownItems>
-          <DropdownItem v-slot="{ active }">
-            Testing{{ active ? ": Active" : "" }}
-          </DropdownItem>
-          <DropdownItem>Another One</DropdownItem>
-        </DropdownItems>
-      </Dropdown>
-    </div>
+    <router-view />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, inject } from "vue";
 import { tw } from "twind";
-import Button from "@/components/Button/Button.vue";
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownItems,
-  DropdownItem
-} from "@/components/Dropdown/Dropdown.vue";
-import { darkMode } from "./utils/darkMode";
 export default defineComponent({
   name: "App",
-  components: {
-    Button,
-    Dropdown,
-    DropdownButton,
-    DropdownItems,
-    DropdownItem
-  },
   setup() {
-    const { isDark, toggleScheme } = darkMode();
     const twindEnable = inject("twindEnable", true);
     onMounted(() => {
       twindEnable
@@ -65,7 +25,7 @@ export default defineComponent({
           )
         : null;
     });
-    return { isDark, toggleScheme, twindEnable };
+    return {};
   }
 });
 </script>
