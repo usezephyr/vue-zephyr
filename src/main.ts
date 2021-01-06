@@ -6,7 +6,7 @@ import { setup, silent } from 'twind';
 import typography from '@twind/typography'
 // Components
 import Button from "@/components/Button/Button.vue";
-// @ts-expect-error
+// @ts-ignore
 import Dropdown, { DropdownButton, DropdownItems, DropdownItem } from "@/components/Dropdown/Dropdown.vue";
 
 import theme from './testTheme';
