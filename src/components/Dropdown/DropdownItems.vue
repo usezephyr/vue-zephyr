@@ -18,7 +18,7 @@ import { tw } from "twind";
 import { Classy } from "@/utils/helpers";
 import { MenuItems as HMenuItems } from "@headlessui/vue";
 export default defineComponent({
-  name: "ZDropdownItems",
+  name: "DropdownItems",
   setup() {
     const classes = new Classy()
       .append(

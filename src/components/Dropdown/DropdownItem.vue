@@ -14,7 +14,7 @@ import { defineComponent, computed, inject } from "vue";
 import { MenuItem as HMenuItem } from "@headlessui/vue";
 import { Classy } from "@/utils/helpers.ts";
 export default defineComponent({
-  name: "ZDropdownItem",
+  name: "DropdownItem",
   components: {
     HMenuItem
   },

@@ -4,30 +4,30 @@
       <div>Toggle</div>
     </div>
     <div class="space-y-4">
-      <ZButton
+      <Button
         @click="toggleScheme"
         classRemove="rounded-md"
         classAppend="rounded-l-md"
       >
         Turn: {{ isDark ? "☀️" : "🌙" }}
-      </ZButton>
-      <ZDropdown v-slot="{ open }">
-        <ZDropdownButton>
-          <ZButton
+      </Button>
+      <Dropdown v-slot="{ open }">
+        <DropdownButton>
+          <Button
             variant="danger"
             classRemove="rounded-md"
             :classAppend="`rounded-r-md`"
           >
             {{ open ? "Close" : "Open" }}
-          </ZButton>
-        </ZDropdownButton>
-        <ZDropdownItems>
-          <ZDropdownItem v-slot="{ active }">
+          </Button>
+        </DropdownButton>
+        <DropdownItems>
+          <DropdownItem v-slot="{ active }">
             Testing{{ active ? ": Active" : "" }}
-          </ZDropdownItem>
-          <ZDropdownItem>Another One</ZDropdownItem>
-        </ZDropdownItems>
-      </ZDropdown>
+          </DropdownItem>
+          <DropdownItem>Another One</DropdownItem>
+        </DropdownItems>
+      </Dropdown>
     </div>
   </main>
 </template>
@@ -35,21 +35,22 @@
 <script lang="ts">
 import { defineComponent, onMounted, inject } from "vue";
 import { tw } from "twind";
-import ZButton from "@/components/ZButton/ZButton.vue";
-import ZDropdown, {
-  ZDropdownButton,
-  ZDropdownItems,
-  ZDropdownItem
-} from "@/components/ZDropdown/ZDropdown.vue";
+import Button from "@/components/Button/Button.vue";
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownItems,
+  DropdownItem
+} from "@/components/Dropdown/Dropdown.vue";
 import { darkMode } from "./utils/darkMode";
 export default defineComponent({
   name: "App",
   components: {
-    ZButton,
-    ZDropdown,
-    ZDropdownButton,
-    ZDropdownItems,
-    ZDropdownItem
+    Button,
+    Dropdown,
+    DropdownButton,
+    DropdownItems,
+    DropdownItem
   },
   setup() {
     const { isDark, toggleScheme } = darkMode();

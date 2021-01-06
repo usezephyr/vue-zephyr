@@ -9,15 +9,15 @@
 <script lang="ts">
 import { computed, defineComponent, inject } from "vue";
 import { Menu as HMenu } from "@headlessui/vue";
-import ZDropdownButton from "./ZDropdownButton.vue";
-import ZDropdownItem from "./ZDropdownItem.vue";
-import ZDropdownItems from "./ZDropdownItems.vue";
+import DropdownButton from "./DropdownButton.vue";
+import DropdownItem from "./DropdownItem.vue";
+import DropdownItems from "./DropdownItems.vue";
 import { Classy } from "@/utils/helpers.ts";
 import { variant, classRemove, classAppend, status, as } from "@/props";
 import Theme from "./theme";
 
-export default defineComponent({
-  name: "ZDropdown",
+const Dropdown = defineComponent({
+  name: "Dropdown",
   components: {
     HMenu
   },
@@ -45,5 +45,6 @@ export default defineComponent({
   }
 });
 
-export { ZDropdownButton, ZDropdownItems, ZDropdownItem };
+export { Dropdown, DropdownButton, DropdownItems, DropdownItem };
+export default Dropdown;
 </script>

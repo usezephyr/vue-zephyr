@@ -1,7 +1,4 @@
-import ZButton from "./ZButton";
-import ZDropdown from "./ZDropdown";
-// import ZDropdownButton from "./ZDropdownButton";
-// import ZDropdownItem from "./ZDropdownItem";
-// import ZDropdownItems from "./ZDropdownItems";
+import Button from "./Button";
+import Dropdown from "./Dropdown";
 
-export { ZButton, ZDropdown };
+export { Button, Dropdown };

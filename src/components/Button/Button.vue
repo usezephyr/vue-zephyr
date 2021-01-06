@@ -11,7 +11,7 @@ import { Classy } from "@/utils/helpers.ts";
 import Theme from "./theme";
 
 export default defineComponent({
-  name: "ZButton",
+  name: "Button",
   props: {
     ...classAppend(),
     ...classRemove(),

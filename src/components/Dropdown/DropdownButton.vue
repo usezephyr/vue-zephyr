@@ -10,7 +10,7 @@ import { MenuButton as HMenuButton } from "@headlessui/vue";
 import { variant } from "@/props";
 
 export default defineComponent({
-  name: "ZDropdownButton",
+  name: "DropdownButton",
   components: {
     HMenuButton
   },
