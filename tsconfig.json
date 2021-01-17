@@ -6,7 +6,7 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/views/locales/zh-CN.ts", "src/views/locales/en.ts", "src/router/index.js"  ],
   "exclude": [
     "node_modules"
   ]
