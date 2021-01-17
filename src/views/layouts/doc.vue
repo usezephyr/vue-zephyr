@@ -1,14 +1,4 @@
 <template>
-  <img
-    v-if="isDark"
-    :class="tw`absolute w-full top-0 right-0 left-0`"
-    src="@/assets/images/gradient-top-dark.png"
-  />
-  <img
-    v-else
-    :class="tw`absolute w-full top-0 right-0 left-0`"
-    src="@/assets/images/gradient-top-light.png"
-  />
   <main :class="tw`h-full flex(& col) relative`">
     <div :class="tw`mt-6`">
       <Container>
