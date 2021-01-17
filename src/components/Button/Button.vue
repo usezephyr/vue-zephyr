@@ -16,16 +16,16 @@ export default defineComponent({
     ...classAppend(),
     ...classRemove(),
     ...variant({
-      default: "secondary"
+      default: "primary",
     }),
     ...status({
       default: "default",
-      validator: v => ["loading", "default"].includes(v)
+      validator: (v) => ["loading", "default"].includes(v),
     }),
     ...size({
       default: "md",
-      validator: v => ["sm", "md", "lg"].includes(v)
-    })
+      validator: (v) => ["xs", "sm", "md", "lg", "xl"].includes(v),
+    }),
   },
   setup(props) {
     const { value: theme } = computed(() => Theme(inject("userTheme", {})));
@@ -39,6 +39,6 @@ export default defineComponent({
         .val()
     );
     return { classes };
-  }
+  },
 });
 </script>
