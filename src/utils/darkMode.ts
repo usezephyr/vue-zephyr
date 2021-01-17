@@ -30,7 +30,7 @@ const setLight = (): void => {
   isDark.value = false;
 };
 
-const checkSchemePreference = (): boolean => {
+const setSchemePreference = (): boolean => {
   if (localStorage.getItem("darkMode") === null) {
     window.matchMedia("(prefers-color-scheme: dark)").matches
       ? setDark()
@@ -43,7 +43,7 @@ const checkSchemePreference = (): boolean => {
 
 // All-in-one Method
 const darkMode = (): Mode => {
-  onMounted(() => checkSchemePreference());
+  onMounted(() => setSchemePreference());
   watch(isDark, isDark => {
     isDark
       ? document.documentElement.classList.add("dark")
@@ -55,7 +55,7 @@ const darkMode = (): Mode => {
 export {
   isDark,
   toggleScheme,
-  checkSchemePreference,
+  setSchemePreference,
   setLight,
   setDark,
   darkMode

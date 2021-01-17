@@ -6,7 +6,7 @@ export const remove = (list: string, remove: string): string => {
   if (!remove) return list;
   return list
     .split(" ")
-    .filter(c => {
+    .filter((c) => {
       return !remove.includes(c);
     })
     .join(" ");
@@ -35,7 +35,7 @@ export class Classy {
       typeof classes === "string" ? classes.split(" ") : classes;
 
     this.value = this.toArray(this.value).filter(
-      className => !classArray.includes(className)
+      (className) => !classArray.includes(className)
     );
     return this;
   }
