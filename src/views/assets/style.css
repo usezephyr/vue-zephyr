@@ -1,0 +1,6 @@
+@import "prism-light.css";
+@import "prism-dark.css";
+
+body {
+  color: inherit;
+}

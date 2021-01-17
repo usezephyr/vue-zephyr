@@ -1,7 +1,5 @@
 <template>
-  <div :class="tw`prose prose-xl`">
-    <slot></slot>
-  </div>
+  <div :class="tw`border(t gray-200 dark:gray-800) my-4`"></div>
 </template>
 
 <script lang="ts">
@@ -11,8 +9,6 @@ import { tw } from "twind";
 export default defineComponent({
   setup() {
     return { tw };
-  }
+  },
 });
 </script>
-
-<style scoped></style>

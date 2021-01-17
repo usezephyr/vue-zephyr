@@ -1,16 +1,26 @@
 // Vue
 import { createApp } from "vue";
 import App from "./App.vue";
+
 // Twind
 import { setup, silent } from 'twind';
 import typography from '@twind/typography'
+import '@/views/assets/style.css'
+
 // Components
 import Button from "@/components/Button/Button.vue";
-// @ts-ignore
 import Dropdown, { DropdownButton, DropdownItems, DropdownItem } from "@/components/Dropdown/Dropdown.vue";
+import Table, { TableWrapper, Thead, Tbody, Tr, Th, Td } from "@/components/Table/Table.vue";
 
-import theme from './testTheme';
+// Router
+import VueRouterLayout from 'vue-router-layout'
 import router from './router'
+
+// i18n
+import {checkLocale, i18n} from "@/views/utils/locale";
+
+// Zephyrs External Theme
+import theme from './testTheme';
 
 // Create App
 const app = createApp(App);
@@ -21,9 +31,17 @@ app.component('Dropdown', Dropdown);
 app.component('DropdownButton', DropdownButton);
 app.component('DropdownItems', DropdownItems);
 app.component('DropdownItem', DropdownItem);
+app.component('TableWrapper', TableWrapper);
+app.component('Table', Table);
+app.component('Thead', Thead);
+app.component('Tbody', Tbody);
+app.component('Tr', Tr);
+app.component('Th', Th);
+app.component('Td', Td);
 
 // Router
 app.use(router);
+app.use(VueRouterLayout);
 
 // User Theme
 app.provide('userTheme', theme ?? {});
@@ -64,6 +82,11 @@ if (twindEnable) {
   })
 }
 app.provide('twindEnable', twindEnable);
+
+// i18n
+checkLocale();
+app.use(i18n);
+
 
 // Go!
 app.mount("#app");

@@ -1,17 +1,16 @@
 <template>
-  <div :class="tw`prose prose-xl`">
-    <slot></slot>
+  <div>
+    <h1>Getting Started</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { tw } from "twind";
 
 export default defineComponent({
   setup() {
-    return { tw };
-  }
+    return {};
+  },
 });
 </script>
 
