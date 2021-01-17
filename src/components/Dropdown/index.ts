@@ -7,7 +7,7 @@ const Plugin = {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   install(vue: Application) {
     registerComponent(vue, Dropdown);
-  }
+  },
 };
 
 export default Plugin;
