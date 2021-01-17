@@ -1,9 +1,8 @@
 import { App as Application, Plugin } from "vue";
 import * as components from "./components/index";
-import { setVueInstance } from "./utils/config/index"
+import { setVueInstance } from "./utils/config/index";
 import merge from "lodash.merge";
-import { setup, silent } from 'twind';
-// eslint-disable-next-line prettier/prettier
+import { setup, silent } from "twind";
 import type { Configuration } from 'twind';
 
 // Install
@@ -11,22 +10,24 @@ export default function pluginSetup(
   config: {
     theme?: Record<string, unknown> | boolean;
     twind?: {
-      enabled: boolean,
-      setup: Configuration
-    }
+      enabled: boolean;
+      setup: Configuration;
+    };
   } = {
-      theme: false,
-    }
+    theme: false,
+  }
 ): Exclude<Plugin["install"], undefined> {
-
   // Merge default config with user config
-  const twindOptions = merge({
-    enable: true,
-    setup: {
-      mode: silent,
-      darkMode: false
-    }
-  }, config.twind)
+  const twindOptions = merge(
+    {
+      enable: true,
+      setup: {
+        mode: silent,
+        darkMode: false,
+      },
+    },
+    config.twind
+  );
 
   // Pass to Twind setup
   if (twindOptions.enable && twindOptions.setup) {
