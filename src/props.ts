@@ -54,7 +54,7 @@ export const as = (
 } => {
   return {
     as: {
-      type: args && args.type ? args.type : [String],
+      type: args && args.type ? args.type : [String, Object],
       default: args && args.default ? args.default : "div",
       required: args && args.required ? args.required : false
     }
@@ -69,7 +69,7 @@ export const status = (
   return {
     status: {
       type: args && args.type ? args.type : [String, Boolean],
-      default: args && args.default ? args.default : "",
+      default: args && args.default ? args.default : false,
       required: args && args.required ? args.required : false,
       validator: args && args.validator ? args.validator : () => true
     }
