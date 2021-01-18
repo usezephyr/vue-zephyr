@@ -138,7 +138,13 @@
             >
             <p>
               Using
-              <Anchor href="https://github.com/tw-in-js/twind" newTab>
+              <Anchor
+                variant="primary"
+                classAppend="space-x-1"
+                classRemove="space-x-2"
+                href="https://github.com/tw-in-js/twind"
+                newTab
+              >
                 Twind
               </Anchor>
               under the hood, Zephyr requires no build step to generate Tailwind
