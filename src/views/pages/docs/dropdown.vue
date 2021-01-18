@@ -391,7 +391,6 @@ import Example from "@/views/components/Example.vue";
 import Code from "@/views/components/Code.vue";
 
 export default defineComponent({
-  layout: "doc",
   components: {
     DocHeader,
     Badge,

@@ -283,6 +283,7 @@ import { Classy } from "@/utils/helpers";
 import { isDark } from "@/utils/darkMode";
 
 export default defineComponent({
+  layout: "home",
   components: {
     Link,
   },

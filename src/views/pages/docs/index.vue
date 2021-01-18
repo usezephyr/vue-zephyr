@@ -10,7 +10,6 @@ import { tw } from "twind";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  layout: "doc",
   components: {},
   setup() {
     const router = useRouter();

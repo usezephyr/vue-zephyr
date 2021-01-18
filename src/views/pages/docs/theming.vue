@@ -23,7 +23,6 @@ import { defineComponent } from "vue";
 import DocHeader from "@/views/components/DocHeader.vue";
 
 export default defineComponent({
-  layout: "doc",
   components: {
     DocHeader,
   },

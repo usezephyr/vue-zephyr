@@ -214,7 +214,6 @@ import Code from "@/views/components/Code.vue";
 import Theme from "@/components/Button/theme.ts";
 
 export default defineComponent({
-  layout: "doc",
   components: {
     DocHeader,
     Divider,

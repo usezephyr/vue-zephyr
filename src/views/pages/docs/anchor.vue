@@ -183,7 +183,6 @@ import Anchor from "@/components/Anchor/Anchor.vue";
 import Theme from "@/components/Anchor/theme.ts";
 
 export default defineComponent({
-  layout: "doc",
   components: {
     DocHeader,
     Badge,
