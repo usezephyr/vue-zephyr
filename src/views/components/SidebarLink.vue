@@ -1,13 +1,11 @@
 <template>
   <li>
     <Link
-      :class="{
-        [tw`bg-green-100 dark:bg-green-700 text-shamrock-900! dark:text-shamrock-100! rounded pointer-events-none `]:
-          currentRoute.fullPath === to
-      }"
-      classAppend="inline-block w-full px-3 py-1.5"
+      :classAppend="[
+        classes.BASE,
+        currentRoute.fullPath === to ? classes.active : classes.inactive
+      ]"
       :to="to"
-      styled
     >
       <slot></slot>
     </Link>
@@ -15,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 import { tw } from "twind";
 import Link from "@/views/components/Link.vue";
 import router from "@/router/index.ts";
@@ -32,7 +30,14 @@ export default defineComponent({
   },
   setup() {
     const { currentRoute } = router;
-    return { tw, currentRoute };
+    const classes = computed(() => {
+      return {
+        BASE: `inline-block w-full px-3 py-1.5`,
+        active: `bg-green-500 dark:bg-green-700 text-white dark:text-shamrock-100! rounded pointer-events-none`,
+        inactive: `text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100`,
+      };
+    });
+    return { tw, currentRoute, classes };
   },
 });
 </script>
