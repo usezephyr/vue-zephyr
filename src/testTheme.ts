@@ -5,6 +5,6 @@ export default {
     _default: "$root.danger",
   },
   Anchor: {
-    button: "inline-flex space-x-2 text(green-700 dark:green-50 hover:shamrock-900) px-2 py-2 rounded hover:(bg(gray-100 dark:gray-700))"
+    button: "inline-flex space-x-2 text(gray-500 dark:gray-300 hover:dark:white hover:green-700) px-2.5 py-2 rounded hover:(bg(green-100 dark:gray-700 opacity-50 dark:opacity-50))"
   }
 };

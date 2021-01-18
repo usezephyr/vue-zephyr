@@ -2,7 +2,7 @@
   <button @click="toggleScheme">
     <svg
       v-if="isDark"
-      :class="tw`w-4`"
+      :class="tw`w-5`"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"

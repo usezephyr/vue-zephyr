@@ -25,13 +25,13 @@
     <div :class="tw`flex items-center ml-auto space-x-2`">
       <LightSwitch
         :class="
-          tw`flex items-center text(shamrock-700 dark:shamrock-50 hover:shamrock-900) px-2 py-2 rounded hover:(bg(shamrock-50 dark:gray-700)) uppercase cursor-pointer select-none`
+          tw`items-center inline-flex space-x-2 uppercase cursor-pointer select-none text(gray-500 dark:gray-300 hover:dark:white hover:green-700) px-2.5 py-2 rounded hover:(bg(green-100 dark:gray-700 opacity-50 dark:opacity-50))`
         "
       />
       <Dropdown>
         <DropdownButton
           as="button"
-          classAppend="flex items-center text(shamrock-700 dark:shamrock-50 hover:shamrock-900) px-2 py-2 rounded hover:(bg(shamrock-50 dark:gray-700)) uppercase cursor-pointer"
+          classAppend="items-center uppercase cursor-pointer inline-flex space-x-2 text(gray-500 dark:gray-300 hover:dark:white hover:green-700) px-2.5 py-2 rounded hover:(bg(green-100 dark:gray-700 opacity-50 dark:opacity-50))"
         >
           <div>{{ locale === "zh-CN" ? "中文" : locale }}</div>
           <svg

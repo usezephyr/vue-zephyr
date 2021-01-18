@@ -1,5 +1,5 @@
 <template>
-  <footer :class="tw`bg-gray-100 dark:bg-gray-800`">
+  <footer :class="tw`bg-gray-50 border-t border-gray-100 dark:bg-gray-800`">
     <div
       :class="tw`px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8`"
     >
