@@ -36,7 +36,7 @@
           <Link
             variant="primary"
             :class="tw`space-x-2 py-4 px-4`"
-            to="/guides/getting-started"
+            to="/docs/install"
             styled
           >
             <div>Get Started</div>
