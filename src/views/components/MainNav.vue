@@ -11,10 +11,10 @@
     </router-link>
     <ul :class="tw`flex items-center space-x-4`">
       <li>
-        <Link to="/guides" variant="button">Guides</Link>
+        <Link to="/docs/install" variant="button">Documentation</Link>
       </li>
       <li>
-        <Link to="/docs/install" variant="button">Documentation</Link>
+        <Link to="/guides" variant="button">Guides</Link>
       </li>
       <li>
         <Anchor href="https://twitter.com/usezephyr" variant="button" newTab>
