@@ -4,6 +4,7 @@
       <li :class="classes.heading">Getting Started</li>
       <SidebarLink to="/docs/install">Installation</SidebarLink>
       <SidebarLink to="/docs/theming">Themeing</SidebarLink>
+      <SidebarLink to="/docs/guides">Guides</SidebarLink>
       <li :class="classes.heading">
         <div :class="tw`mt-8`">Components</div>
       </li>

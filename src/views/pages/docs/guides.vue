@@ -10,21 +10,37 @@
           <Badge classAppend="bg-yellow-500 text-gray-900">In Progress</Badge>
         </div>
       </template>
+      <template #notice>
+        Guides are coming soon. Please keep an eye on our
+        <Anchor
+          href="https://github.com/usezephyr/vue-zephyr"
+          variant="primary"
+          classAppend="space-x-1"
+          classRemove="space-x-2"
+          newTab
+        >
+          Github
+        </Anchor>
+        or follow us on
+        <Anchor
+          href="https://twitter.com/usezephyr"
+          variant="primary"
+          classAppend="space-x-1"
+          classRemove="space-x-2"
+          newTab
+        >
+          Twitter </Anchor
+        >.
+      </template>
     </DocHeader>
-    <div>
-      <section>
-        <h2>Redirecting...</h2>
-      </section>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent } from "vue";
 import { tw } from "twind";
 import Badge from "@/views/components/Badge.vue";
 import DocHeader from "@/views/components/DocHeader.vue";
-import { useRouter } from "vue-router";
 
 export default defineComponent({
   components: {
@@ -32,14 +48,7 @@ export default defineComponent({
     DocHeader,
   },
   setup() {
-    const router = useRouter();
-    onMounted(() => {
-      router.push("/docs/guides");
-    });
     return { tw };
   },
 });
 </script>
-
-<style scoped>
-</style>
