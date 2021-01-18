@@ -33,7 +33,7 @@ export default defineComponent({
     const classes = computed(() => {
       return {
         BASE: `inline-block w-full px-3 py-1.5`,
-        active: `bg-green-500 dark:bg-green-700 text-white dark:text-shamrock-100! rounded pointer-events-none`,
+        active: `bg-green-500 dark:bg-green-700 text-white rounded pointer-events-none`,
         inactive: `text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100`,
       };
     });
