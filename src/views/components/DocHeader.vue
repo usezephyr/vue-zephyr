@@ -13,21 +13,21 @@
         <slot name="right-side"></slot>
       </div>
     </div>
-    <div :class="tw`mt-12`" v-if="notice">
-      <blockquote
-        :class="tw`p-6 border-l-4 border-shamrock bg(white dark:gray-800)`"
-      >
-        <slot name="notice"></slot>
-      </blockquote>
-    </div>
+    <Blockquote :class="tw`mt-12`" v-if="notice">
+      <slot name="notice"></slot>
+    </Blockquote>
   </header>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { tw } from "twind";
+import Blockquote from "@/views/components/Blockquote.vue";
 
 export default defineComponent({
+  components: {
+    Blockquote,
+  },
   setup(_, { slots }) {
     const { notice } = slots;
     return { tw, notice };
