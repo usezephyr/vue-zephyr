@@ -34,7 +34,7 @@
       </h3>
       <Divider />
       <div :class="tw`space-y-8`">
-        <div class="space-y-4">
+        <div :class="tw`space-y-4`">
           <h4 :class="tw`font-medium text(gray-900 dark:gray-100 xl)`">
             Variants
             <span v-if="locale !== 'en'"
@@ -208,10 +208,10 @@ import { toTitleCase } from "@/views/utils/stringMods";
 import DocHeader from "@/views/components/DocHeader.vue";
 import Badge from "@/views/components/Badge.vue";
 import Divider from "@/views/components/Divider.vue";
-import Theme from "@/components/Button/theme.ts";
 import Button from "@/components/Button/Button.vue";
 import Example from "@/views/components/Example.vue";
 import Code from "@/views/components/Code.vue";
+import Theme from "@/components/Button/theme.ts";
 
 export default defineComponent({
   layout: "doc",
