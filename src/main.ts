@@ -11,6 +11,7 @@ import '@/views/assets/style.css'
 import Button from "@/components/Button/Button.vue";
 import Dropdown, { DropdownButton, DropdownItems, DropdownItem } from "@/components/Dropdown/Dropdown.vue";
 import Table, { TableWrapper, Thead, Tbody, Tr, Th, Td } from "@/components/Table/Table.vue";
+import Anchor from "@/components/Anchor/Anchor.vue";
 
 // Router
 import VueRouterLayout from 'vue-router-layout'
@@ -38,6 +39,7 @@ app.component('Tbody', Tbody);
 app.component('Tr', Tr);
 app.component('Th', Th);
 app.component('Td', Td);
+app.component('Anchor', Anchor);
 
 // Router
 app.use(router);
