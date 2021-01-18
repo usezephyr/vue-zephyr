@@ -15,7 +15,6 @@ import { tw } from "twind";
 import Strip from "strip-indent";
 import PrismJs from "prismjs";
 import "prismjs/components/prism-json";
-// import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import Prism from "vue-prism-component";
 import { format } from "prettier/standalone";
