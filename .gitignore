@@ -3,9 +3,9 @@ node_modules
 /dist
 /build
 /testumdbuild
-.env
 
 # local env files
+.env
 .env.local
 .env.*.local
 
