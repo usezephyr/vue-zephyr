@@ -2,6 +2,9 @@
   "name": "@usezephyr/vue-zephyr",
   "version": "0.1.6",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "The themeable component library built for Tailwind developers.",
   "license": "MIT",
   "repository": {
