@@ -3,6 +3,6 @@
     "release": true
   },
   "git": {
-    "commitMessage": "chore(release): Release ${version}"
+    "commitMessage": "chore(release): release ${version}"
   }
 }

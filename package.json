@@ -21,8 +21,8 @@
     "build:js": "rimraf dist && cross-env NODE_ENV=production rollup --config rollup.config.js",
     "cz": "git-cz",
     "lint": "vue-cli-service lint",
-    "serve": "vue-cli-service serve",
-    "release": "release-it"
+    "release": "dotenv release-it",
+    "serve": "vue-cli-service serve"
   },
   "files": [
     "dist",
