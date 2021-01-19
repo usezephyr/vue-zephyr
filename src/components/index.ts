@@ -1,5 +1,19 @@
+import Anchor from "./Anchor";
 import Button from "./Button";
-import Dropdown from "./Dropdown";
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownItems,
+  DropdownItem
+} from "./Dropdown";
 import Table from "./Table";
 
-export { Button, Dropdown, Table };
+export {
+  Anchor,
+  Button,
+  Dropdown,
+  DropdownButton,
+  DropdownItems,
+  DropdownItem,
+  Table,
+};

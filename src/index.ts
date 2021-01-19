@@ -1,5 +1,5 @@
 import { App as Application, Plugin } from "vue";
-import * as components from "./components/index";
+import * as componentsAsPlugins from "./components/plugins";
 import { setVueInstance } from "./utils/config/index";
 import merge from "lodash.merge";
 import { setup, silent } from "twind";
@@ -38,9 +38,9 @@ export default function pluginSetup(
   const install: Exclude<Plugin["install"], undefined> = (app: Application) => {
     // Components
     setVueInstance(app);
-    for (const componentKey in components) {
+    for (const componentKey in componentsAsPlugins) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      app.use((components as any)[componentKey]);
+      app.use((componentsAsPlugins as any)[componentKey]);
     }
 
     // Provide data to components
