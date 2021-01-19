@@ -2,7 +2,28 @@
   <DocHeader>
     <template #title>Table</template>
     <template #subtitle> Display data in table format </template>
-    <template #notice> This page is coming soon. </template>
+    <template #notice>
+      This component is coming soon. Please keep an eye on our
+      <Anchor
+        href="https://github.com/usezephyr/vue-zephyr"
+        variant="primary"
+        classAppend="space-x-1"
+        classRemove="space-x-2"
+        newTab
+      >
+        Github
+      </Anchor>
+      or follow us on
+      <Anchor
+        href="https://twitter.com/usezephyr"
+        variant="primary"
+        classAppend="space-x-1"
+        classRemove="space-x-2"
+        newTab
+      >
+        Twitter </Anchor
+      >.
+    </template>
   </DocHeader>
 </template>
 
