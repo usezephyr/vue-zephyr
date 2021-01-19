@@ -27,4 +27,4 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
       - name: Release version
-        run: yarn release --ci
+        run: npm release --ci --npm.skipChecks
