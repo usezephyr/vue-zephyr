@@ -1,4 +1,4 @@
 {
   "extends": "@jedmao/semantic-release-npm-github-config",
-  "branches": ["master"]
+  "branches": ["main"]
 }
