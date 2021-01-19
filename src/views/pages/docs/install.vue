@@ -21,9 +21,12 @@
       <h3 :class="tw`font-medium text(gray-900 dark:gray-100 3xl)`">Install</h3>
       <div :class="tw`border(t gray-200 dark:gray-800) my-4`"></div>
       <div :class="tw`space-y-6`">
-        <p>...</p>
+        <p>
+          Inside your project directory root install Vue Zephyr via NPM or Yarn:
+        </p>
         <div :class="tw`rounded-lg overflow-hidden`">
-          <Code lang="bash" :code="codes.install" />
+          <Code lang="bash" :code="codes.npmInstall" />
+          <Code lang="bash" :code="codes.yarnInstall" />
         </div>
       </div>
     </section>
@@ -43,7 +46,8 @@ export default defineComponent({
   },
   setup() {
     const codes = {
-      install: `npm i @usezephyr/vue-zephyr`,
+      npmInstall: `npm i @usezephyr/vue-zephyr`,
+      yarnInstall: `yarn add @usezephyr/vue-zephyr`,
     };
     return { codes, tw };
   },
