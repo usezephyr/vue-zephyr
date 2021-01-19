@@ -26,5 +26,11 @@ jobs:
       - name: Generate .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
+      - name: Use NPM Token with organization read access
+        uses: dkershner6/use-npm-token-action@v1
+        with:
+          token: "${{ secrets.NPM_TOKEN }}"
+          workspace: ./node
+
       - name: Release version
         run: npm run release --ci --npm.skipChecks
