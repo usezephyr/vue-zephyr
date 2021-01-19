@@ -4,7 +4,7 @@
     :class="tw`px-1 py-2 bg-gray-100 dark:bg-gray-800 overflow-auto`"
   >
     <Prism :language="lang === 'vue' ? 'html' : lang" :inline="inline">{{
-      prettyCode
+      formattedCode
     }}</Prism>
   </div>
 </template>
@@ -15,6 +15,7 @@ import { tw } from "twind";
 import Strip from "strip-indent";
 import PrismJs from "prismjs";
 import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import Prism from "vue-prism-component";
 import { format } from "prettier/standalone";
@@ -34,7 +35,8 @@ export default defineComponent({
     lang: {
       type: String,
       default: "html",
-      validator: (v: string) => ["js", "vue", "json", "html"].includes(v),
+      validator: (v: string) =>
+        ["js", "vue", "json", "html", "bash"].includes(v),
     },
     inline: {
       type: Boolean,
@@ -61,14 +63,16 @@ export default defineComponent({
         plugins: [prettierPluginPackage],
       },
     };
-    const prettierConfig = prettierConfigs?.[props?.lang];
-    const prettyCode = computed(() =>
-      format(Strip(props.code), prettierConfig)
+    const prettierConfig = prettierConfigs?.[props.lang] ?? false;
+    const formattedCode = computed(() =>
+      prettierConfig
+        ? format(Strip(props.code), prettierConfig)
+        : Strip(props.code)
     );
     onMounted(() => {
       PrismJs.highlightAll();
     });
-    return { prettyCode, tw };
+    return { formattedCode, tw };
   },
 });
 </script>
