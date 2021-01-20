@@ -1,5 +1,3 @@
 {
-  "**/*.+(ts|js|vue)": [
-    "yarn lint"
-  ]
+  "**/*.+(ts|js|vue)": ["yarn lint"]
 }

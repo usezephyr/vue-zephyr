@@ -32,8 +32,11 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-, "src/views/locales/zh-CN.ts", "src/views/locales/en.ts", "src/router/index.js"  ],
+    "tests/**/*.tsx",
+    "src/views/locales/zh-CN.ts",
+    "src/views/locales/en.ts",
+    "src/router/index.js"
+  ],
   "exclude": [
     "node_modules"
   ]
