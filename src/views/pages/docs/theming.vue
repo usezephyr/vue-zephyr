@@ -43,11 +43,19 @@ export default defineComponent({
         "content": "Theming"
       },
       {
+        "name": "twitter:title",
+        "content": "Theming"
+      },
+      {
         "name": "description",
         "content": "Customize the apperance for your project."
       },
       {
         "property": "og:description",
+        "content": "Customize the apperance for your project."
+      },
+      {
+        "property": "twitter:s",
         "content": "Customize the apperance for your project."
       },
       {
@@ -57,6 +65,22 @@ export default defineComponent({
       {
         "property": "og:image",
         "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
       }
     ]
   }
