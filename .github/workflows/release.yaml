@@ -26,5 +26,5 @@ jobs:
       - name: Generate .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
-      - name: Release version
-        run: npm run release --ci --npm.skipChecks
+      # - name: Release version
+      #   run: npm run release --ci --npm.skipChecks
