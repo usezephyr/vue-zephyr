@@ -35,8 +35,8 @@ export default defineComponent({
         "content": "https://usezephyr.com/docs/starter"
       },
       {
-        "property": "og:url",
-        "content": "https://usezephyr.com/test.png"
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
       }
     ]
   }
