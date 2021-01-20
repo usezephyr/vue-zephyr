@@ -55,7 +55,7 @@ export default defineComponent({
         "content": "Customize the apperance for your project."
       },
       {
-        "property": "twitter:s",
+        "property": "twitter:description",
         "content": "Customize the apperance for your project."
       },
       {
