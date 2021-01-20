@@ -1,7 +1,7 @@
 <template>
   <DocHeader>
     <template #title> Installation </template>
-    <template #subtitle> Get started in seconds </template>
+    <template #subtitle>Get started in Vue Zephyr in minutes.</template>
     <template #right-side>
       <div :class="tw`justify-end flex items-start md:mt-2 space-x-2`">
         <Badge classAppend="bg-yellow-500 text-gray-900">In Progress</Badge>
@@ -128,3 +128,34 @@ export default defineComponent({
   },
 });
 </script>
+
+<route>
+{
+  "name": "install",
+  "meta": {
+    "title": "Installation | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Installation"
+      },
+      {
+        "name": "description",
+        "content": "Get started in Vue Zephyr in minutes."
+      },
+      {
+        "property": "og:description",
+        "content": "Get started in Vue Zephyr in minutes."
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/install"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/test.png"
+      }
+    ]
+  }
+}
+</route>

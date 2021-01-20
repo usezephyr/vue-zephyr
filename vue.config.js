@@ -17,5 +17,11 @@ module.exports = {
   },
   chainWebpack: (config) => {
     addVueRawPreLoader(config);
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = 'Vue Zephyr'
+        return args
+      })
   },
 };

@@ -32,5 +32,33 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<route>
+{
+  "name": "theming",
+  "meta": {
+    "title": "Themeing | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Theming"
+      },
+      {
+        "name": "description",
+        "content": "Customize the apperance for your project."
+      },
+      {
+        "property": "og:description",
+        "content": "Customize the apperance for your project."
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/theming"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/test.png"
+      }
+    ]
+  }
+}
+</route>
