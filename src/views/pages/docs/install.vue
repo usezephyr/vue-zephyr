@@ -1,7 +1,7 @@
 <template>
   <DocHeader>
     <template #title> Installation </template>
-    <template #subtitle>Get started in Vue Zephyr in minutes.</template>
+    <template #subtitle>Get started with Vue Zephyr in minutes.</template>
     <template #right-side>
       <div :class="tw`justify-end flex items-start md:mt-2 space-x-2`">
         <Badge classAppend="bg-yellow-500 text-gray-900">In Progress</Badge>
@@ -137,15 +137,23 @@ export default defineComponent({
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Installation"
+        "content": "Installation | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Installation | Vue Zephyr"
       },
       {
         "name": "description",
-        "content": "Get started in Vue Zephyr in minutes."
+        "content": "Get started with Vue Zephyr in minutes."
       },
       {
         "property": "og:description",
-        "content": "Get started in Vue Zephyr in minutes."
+        "content": "Get started with Vue Zephyr in minutes."
+      },
+      {
+        "property": "twitter:description",
+        "content": "Get started with Vue Zephyr in minutes."
       },
       {
         "property": "og:url",
@@ -154,6 +162,22 @@ export default defineComponent({
       {
         "property": "og:image",
         "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
       }
     ]
   }
