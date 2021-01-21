@@ -36,7 +36,7 @@ export default defineComponent({
 {
   "name": "theming",
   "meta": {
-    "title": "Themeing | Vue Zephyr",
+    "title": "Theming | Vue Zephyr",
     "metaTags": [
       {
         "property": "og:title",
