@@ -2,7 +2,7 @@
   <header>
     <div :class="tw`flex flex-col-reverse md:flex-row`">
       <div :class="tw`flex-auto`">
-        <h1 :class="tw`font-bold text(gray-900 dark:gray-100 4xl)`">
+        <h1 :class="tw`mt-4 font-bold text(gray-900 dark:gray-100 4xl)`">
           <slot name="title"></slot>
         </h1>
         <h2 :class="tw`mt-1 text(gray-500 dark:gray-400 lg)`">

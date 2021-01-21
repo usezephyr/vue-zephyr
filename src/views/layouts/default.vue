@@ -5,13 +5,13 @@
         <MainNav />
       </Container>
     </div>
-    <div :class="tw`mt-8 layout`">
+    <div :class="tw`lg:mt-8 layout`">
       <Container>
-        <div :class="tw`grid grid-cols-4 gap-12 mt-12`">
-          <div :class="tw`col-span-1 mt-1.5`">
+        <div :class="tw`lg:grid grid-cols-4 gap-12 mt-12`">
+          <div :class="tw`col-span-1 lg:mt-1.5`">
             <Sidebar />
           </div>
-          <div :class="tw`col-span-3`">
+          <div :class="tw`col-span-3 mt-14 lg:mt-0`">
             <BaseLayout />
           </div>
         </div>
