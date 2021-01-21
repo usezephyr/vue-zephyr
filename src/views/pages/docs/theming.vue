@@ -71,16 +71,16 @@ export default defineComponent({
         "content": "https://usezephyr.com/cover.png"
       },
       {
-        "name": "twitter:card",
-        "content": "summary_large_image"
-      },
-      {
         "name": "twitter:site",
         "content": "@usezephyr"
       },
       {
         "name": "twitter:creator",
         "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
       }
     ]
   }
