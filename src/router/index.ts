@@ -30,6 +30,7 @@ router.beforeEach((to, from, next) => {
 
   // If a route with a title was found, set the document (page) title to that value.
   if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
+  if(!nearestWithTitle) document.title = 'Vue Zephyr'; // Fall back if there is no title set
 
   // Remove any stale meta tags from the document using the key attribute we set below.
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el?.parentNode?.removeChild(el));
