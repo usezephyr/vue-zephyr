@@ -41,5 +41,57 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<route>
+{
+  "name": "guides-redirect",
+  "meta": {
+    "title": "Redirect | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Redirect | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Redirect | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "Redirect"
+      },
+      {
+        "property": "og:description",
+        "content": "Redirect"
+      },
+      {
+        "property": "twitter:description",
+        "content": "Redirect"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com?redirect=true"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>
