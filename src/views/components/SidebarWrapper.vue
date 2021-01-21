@@ -1,5 +1,5 @@
 <template>
-  <div :class="tw`relative text-white!`">
+  <div :class="tw`relative block lg:hidden`">
     <transition
       :enter-active-class="tw`duration-150 ease-out`"
       :enter-from-class="tw`scale-95 opacity-0`"
