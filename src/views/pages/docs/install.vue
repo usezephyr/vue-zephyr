@@ -133,15 +133,15 @@ export default defineComponent({
 {
   "name": "install",
   "meta": {
-    "title": "Installation | Vue Zephyr",
+    "title": "Installation",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Installation | Vue Zephyr"
+        "content": "Installation"
       },
       {
         "name": "twitter:title",
-        "content": "Installation | Vue Zephyr"
+        "content": "Installation"
       },
       {
         "name": "description",

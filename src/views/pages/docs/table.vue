@@ -45,15 +45,15 @@ export default defineComponent({
 {
   "name": "table",
   "meta": {
-    "title": "Table | Vue Zephyr",
+    "title": "Table",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Table | Vue Zephyr"
+        "content": "Table"
       },
       {
         "name": "twitter:title",
-        "content": "Table | Vue Zephyr"
+        "content": "Table"
       },
       {
         "name": "description",

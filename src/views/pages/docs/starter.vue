@@ -16,7 +16,7 @@ export default defineComponent({
 {
   "name": "starter",
   "meta": {
-    "title": "Starter | Vue Zephyr",
+    "title": "Starter",
     "metaTags": [
       {
         "property": "og:title",

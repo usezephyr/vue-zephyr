@@ -528,15 +528,15 @@ export default defineComponent({
 {
   "name": "dropdown",
   "meta": {
-    "title": "Dropdown | Vue Zephyr",
+    "title": "Dropdown",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Dropdown | Vue Zephyr"
+        "content": "Dropdown"
       },
       {
         "name": "twitter:title",
-        "content": "Dropdown | Vue Zephyr"
+        "content": "Dropdown"
       },
       {
         "name": "description",

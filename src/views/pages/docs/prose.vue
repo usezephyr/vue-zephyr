@@ -47,15 +47,15 @@ export default defineComponent({
 {
   "name": "prose",
   "meta": {
-    "title": "Prose | Vue Zephyr",
+    "title": "Prose",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Prose | Vue Zephyr"
+        "content": "Prose"
       },
       {
         "name": "twitter:title",
-        "content": "Prose | Vue Zephyr"
+        "content": "Prose"
       },
       {
         "name": "description",

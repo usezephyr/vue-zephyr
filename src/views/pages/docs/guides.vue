@@ -57,15 +57,15 @@ export default defineComponent({
 {
   "name": "guides",
   "meta": {
-    "title": "Guides (coming soon) | Vue Zephyr",
+    "title": "Guides (coming soon)",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Guides (coming soon) | Vue Zephyr"
+        "content": "Guides (coming soon)"
       },
       {
         "name": "twitter:title",
-        "content": "Guides (coming soon) | Vue Zephyr"
+        "content": "Guides (coming soon)"
       },
       {
         "name": "description",

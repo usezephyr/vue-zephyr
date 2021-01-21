@@ -255,15 +255,15 @@ export default defineComponent({
 {
   "name": "anchor",
   "meta": {
-    "title": "Anchor | Vue Zephyr",
+    "title": "Anchor",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Anchor | Vue Zephyr"
+        "content": "Anchor"
       },
       {
         "name": "twitter:title",
-        "content": "Anchor | Vue Zephyr"
+        "content": "Anchor"
       },
       {
         "name": "description",

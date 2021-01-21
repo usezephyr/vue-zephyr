@@ -45,15 +45,15 @@ export default defineComponent({
 {
   "name": "guides-redirect",
   "meta": {
-    "title": "Redirect | Vue Zephyr",
+    "title": "Redirect",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Redirect | Vue Zephyr"
+        "content": "Redirect"
       },
       {
         "name": "twitter:title",
-        "content": "Redirect | Vue Zephyr"
+        "content": "Redirect"
       },
       {
         "name": "description",

@@ -292,15 +292,15 @@ export default defineComponent({
 {
   "name": "button",
   "meta": {
-    "title": "Button | Vue Zephyr",
+    "title": "Button",
     "metaTags": [
       {
         "property": "og:title",
-        "content": "Button | Vue Zephyr"
+        "content": "Button"
       },
       {
         "name": "twitter:title",
-        "content": "Button | Vue Zephyr"
+        "content": "Button"
       },
       {
         "name": "description",
