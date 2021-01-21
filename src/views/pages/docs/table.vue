@@ -1,7 +1,7 @@
 <template>
   <DocHeader>
     <template #title>Table</template>
-    <template #subtitle> Display data in table format </template>
+    <template #subtitle>Easily display data in table format</template>
     <template #notice>
       This component is coming soon. Please keep an eye on our
       <Anchor
@@ -41,5 +41,57 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<route>
+{
+  "name": "table",
+  "meta": {
+    "title": "Table | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Table | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Table | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "Easily display data in table format"
+      },
+      {
+        "property": "og:description",
+        "content": "Easily display data in table format"
+      },
+      {
+        "property": "twitter:description",
+        "content": "Easily display data in table format"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/table"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>

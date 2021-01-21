@@ -333,3 +333,59 @@ export default defineComponent({
   height: 504px;
 }
 </style>
+
+<route>
+{
+  "name": "vue-zephyr",
+  "meta": {
+    "title": "Vue Zephyr | The Vue framework for Tailwind developers",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Vue Zephyr | The Vue framework for Tailwind developers"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Vue Zephyr | The Vue framework for Tailwind developers"
+      },
+      {
+        "name": "description",
+        "content": "The themeable component library built for Tailwind developers."
+      },
+      {
+        "property": "og:description",
+        "content": "The themeable component library built for Tailwind developers."
+      },
+      {
+        "property": "twitter:description",
+        "content": "The themeable component library built for Tailwind developers."
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>
+

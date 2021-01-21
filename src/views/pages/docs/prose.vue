@@ -1,9 +1,9 @@
 <template>
   <DocHeader>
     <template #title>Prose</template>
-    <template #subtitle
-      >Use Tailwind's typography plugin in component form</template
-    >
+    <template #subtitle>
+      Access Tailwind's typography plugin as a component
+    </template>
     <template #notice>
       This component is coming soon. Please keep an eye on our
       <Anchor
@@ -43,5 +43,57 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<route>
+{
+  "name": "prose",
+  "meta": {
+    "title": "Prose | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Prose | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Prose | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "Access Tailwind's typography plugin as a component"
+      },
+      {
+        "property": "og:description",
+        "content": "Access Tailwind's typography plugin as a component"
+      },
+      {
+        "property": "twitter:description",
+        "content": "Access Tailwind's typography plugin as a component"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/prose"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>

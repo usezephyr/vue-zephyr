@@ -251,5 +251,57 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<route>
+{
+  "name": "anchor",
+  "meta": {
+    "title": "Anchor | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Anchor | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Anchor | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "Standard <a> element with accesibility baked in"
+      },
+      {
+        "property": "og:description",
+        "content": "Standard <a> element with accesibility baked in"
+      },
+      {
+        "property": "twitter:description",
+        "content": "Standard <a> element with accesibility baked in"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/anchor"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>

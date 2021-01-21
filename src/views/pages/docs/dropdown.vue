@@ -1,7 +1,7 @@
 <template>
   <DocHeader>
     <template #title>Dropdown</template>
-    <template #subtitle>An accessible, flexile menu button</template>
+    <template #subtitle>An accessible &amp; flexible dropdown menu</template>
     <template #right-side>
       <div :class="tw`justify-end flex items-start md:mt-2 space-x-2`">
         <Badge classAppend="bg-yellow-500 text-gray-900">In Progress</Badge>
@@ -523,3 +523,58 @@ export default defineComponent({
   },
 });
 </script>
+
+<route>
+{
+  "name": "dropdown",
+  "meta": {
+    "title": "Dropdown | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Dropdown | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Dropdown | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "An accessible and flexible dropdown menu"
+      },
+      {
+        "property": "og:description",
+        "content": "An accessible and flexible dropdown menu"
+      },
+      {
+        "property": "twitter:description",
+        "content": "An accessible and flexible dropdown menu"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/dropdown"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>

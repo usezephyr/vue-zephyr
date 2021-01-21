@@ -287,3 +287,58 @@ export default defineComponent({
   },
 });
 </script>
+
+<route>
+{
+  "name": "button",
+  "meta": {
+    "title": "Button | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Button | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Button | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "A basic, all purpose button"
+      },
+      {
+        "property": "og:description",
+        "content": "A basic, all purpose button"
+      },
+      {
+        "property": "twitter:description",
+        "content": "A basic, all purpose button"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/button"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>

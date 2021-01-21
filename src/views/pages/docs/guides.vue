@@ -52,3 +52,59 @@ export default defineComponent({
   },
 });
 </script>
+
+<route>
+{
+  "name": "guides",
+  "meta": {
+    "title": "Guides (coming soon) | Vue Zephyr",
+    "metaTags": [
+      {
+        "property": "og:title",
+        "content": "Guides (coming soon) | Vue Zephyr"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Guides (coming soon) | Vue Zephyr"
+      },
+      {
+        "name": "description",
+        "content": "Coming soon"
+      },
+      {
+        "property": "og:description",
+        "content": "Coming soon"
+      },
+      {
+        "property": "twitter:description",
+        "content": "Coming soon"
+      },
+      {
+        "property": "og:url",
+        "content": "https://usezephyr.com/docs/dropdown"
+      },
+      {
+        "property": "og:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "property": "twitter:image",
+        "content": "https://usezephyr.com/cover.png"
+      },
+      {
+        "name": "twitter:site",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:creator",
+        "content": "@usezephyr"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      }
+    ]
+  }
+}
+</route>
+
