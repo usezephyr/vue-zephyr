@@ -11,7 +11,7 @@
           <div :class="tw`col-span-1 lg:mt-1.5`">
             <Sidebar />
           </div>
-          <div :class="tw`col-span-3 mt-14 lg:mt-0`">
+          <div :class="tw`col-span-3 mt-8 lg:mt-0`">
             <BaseLayout />
           </div>
         </div>
