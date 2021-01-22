@@ -1,5 +1,5 @@
 <template>
-  <div :class="tw`max-w-7xl mx-auto px-8`">
+  <div :class="tw`max-w-7xl mx-auto px-4 sm:px-8`">
     <slot></slot>
   </div>
 </template>
